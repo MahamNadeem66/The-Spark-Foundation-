@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Banking System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<Style>
+    /* Reset some default styles for better consistency */
+body, h1, h2, ul, li, p, table, form {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+nav {
+    background-color: #444;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+form {
+    margin-top: 20px;
+}
+
+form label, form select, form input, form button {
+    display: block;
+    margin-bottom: 10px;
+}
+
+form select, form input, form button {
+    width: 100%;
+    padding: 10px;
+}
+
+form button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #555;
+}
+/* Reset some default styles for better consistency */
+body, h1, h2, ul, li, p, table, form {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+nav {
+    background-color: #444;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Add a color transition on link hover */
+}
+
+nav ul li a:hover {
+    color: #ffca08; /* Change link color on hover */
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+form {
+    margin-top: 20px;
+}
+
+form label, form select, form input, form button {
+    display: block;
+    margin-bottom: 10px;
+}
+
+form select, form input, form button {
+    width: 100%;
+    padding: 10px;
+}
+
+form button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Add a background color transition on button hover */
+}
+
+form button:hover {
+    background-color: #555; /* Change button background color on hover */
+}
+/* ... Your existing CSS ... */
+
+/* Define a CSS animation for color changing */
+@keyframes colorChange {
+    0% {
+        color: #4afa04; /* Start with a specific color (e.g., yellow) */
+    }
+    50% {
+        color: #f70707; /* Transition to another color (e.g., dark gray) halfway */
+    }
+    100% {
+        color: #06effc; /* Return to the original color at the end */
+    }
+}
+
+/* Apply the animation to elements with the 'color-changing' class */
+.color-changing {
+    animation: colorChange 5s infinite; /* Run the animation infinitely over 5 seconds */
+}
+
+</Style>
+<body>
+    
+
+    <header>
+    <h1 id="header-text" class="color-changing">Basic Banking System</h1>
+</header>
+<!-- ... -->
+
+    <nav>
+        <ul>
+            <li><a href="#" id="home-link">Home</a></li>
+            <li><a href="#" id="view-customers-link">View All Customers</a></li>
+            <li><a href="#" id="transfer-money-link">Transfer Money</a></li>
+        </ul>
+    </nav>
+    <main>
+    <h2 id="welcome-text" class="color-changing">Welcome to Basic Banking System</h2>
+    <!-- Content will be loaded dynamically here -->
+</main>
+    <footer>
+        <p>&copy; 2023 Basic Banking System</p>
+    </footer>
+    
+    <script src="script.js"></script>
+    <script>
+        // Sample data for customers
+const customers = [
+    { id: 1, name: 'Customer 1', email: 'customer1@example.com', balance: 1000 },
+    { id: 2, name: 'Customer 2', email: 'customer2@example.com', balance: 1500 },
+    // Add more customers here
+];
+
+// Function to load home page content
+function loadHomePage() {
+    const content = document.querySelector('main');
+    content.innerHTML = '<h2>Welcome to Basic Banking System</h2>';
+}
+
+// Function to load view all customers page content
+function loadViewCustomersPage() {
+    const content = document.querySelector('main');
+    content.innerHTML = '<h2>View All Customers</h2>';
+    
+    // Create a table to display customer data
+    const table = document.createElement('table');
+    table.innerHTML = `
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Balance</th>
+            </tr>
+        </thead>
+        <tbody>
+            ${customers.map(customer => `
+                <tr>
+                    <td>${customer.id}</td>
+                    <td>${customer.name}</td>
+                    <td>${customer.email}</td>
+                    <td>${customer.balance}</td>
+                </tr>
+            `).join('')}
+        </tbody>
+    `;
+    
+    content.appendChild(table);
+}
+
+// Function to load transfer money page content
+function loadTransferMoneyPage() {
+    const content = document.querySelector('main');
+    content.innerHTML = '<h2>Transfer Money</h2>';
+    
+    // Create form to perform money transfer
+    const form = document.createElement('form');
+    form.innerHTML = `
+        <label for="sender">Select Sender:</label>
+        <select id="sender">
+            ${customers.map(customer => `<option value="${customer.id}">${customer.name}</option>`).join('')}
+        </select>
+        <br>
+        <label for="receiver">Select Receiver:</label>
+        <select id="receiver">
+            ${customers.map(customer => `<option value="${customer.id}">${customer.name}</option>`).join('')}
+        </select>
+        <br>
+        <label for="amount">Enter Amount:</label>
+        <input type="number" id="amount" min="1">
+        <br>
+        <button type="submit">Transfer</button>
+    `;
+    
+    form.addEventListener('submit', handleTransfer);
+    content.appendChild(form);
+}
+
+// Function to handle money transfer
+function handleTransfer(event) {
+    event.preventDefault();
+    
+    const senderId = document.getElementById('sender').value;
+    const receiverId = document.getElementById('receiver').value;
+    const amount = parseFloat(document.getElementById('amount').value);
+    
+    // Handle the transfer logic here (not implemented in this basic example)
+    // Update customer balances and record the transfer in the transfers table
+    
+    alert(`Transfer $${amount} from Customer ${senderId} to Customer ${receiverId}`);
+}
+
+// Event listeners for navigation links
+document.getElementById('home-link').addEventListener('click', loadHomePage);
+document.getElementById('view-customers-link').addEventListener('click', loadViewCustomersPage);
+document.getElementById('transfer-money-link').addEventListener('click', loadTransferMoneyPage);
+
+// Initial load
+loadHomePage();
+
+    </script>
+</body>
+</html>
